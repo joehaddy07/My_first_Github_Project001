@@ -22,8 +22,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
-          path: file.txt
+          name: file.txt
+          path: .
 
   download-and-display:
     runs-on: ubuntu-latest
@@ -32,10 +32,10 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: my-artifact
+          name: file.txt
 
       - name: Display structure of downloaded files
-        run: ls -R
+        run: ls -l
 
       - name: Show contents of file
         run: cat file.txt

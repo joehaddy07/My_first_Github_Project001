@@ -38,13 +38,8 @@ jobs:
           name: My-file.txt
 
       - name: Display structure of downloaded files
-        run: ls -l
-
-      - name: Show contents of file
-        run: cat file.txt
-
-      - name: Delete file and comfirm the file is deleted
-        run: rm file.txt
-        
-      - name: Delete file and confirm deletion
-        run: ls -l || true 
+        run: |
+          ls -l
+          cat file.txt
+          rm file.txt
+          ls -l || true 
